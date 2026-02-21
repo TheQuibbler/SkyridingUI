@@ -1,0 +1,42 @@
+{
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.runtime.builtin": {
+        "basic": "disable",
+        "debug": "disable",
+        "io": "disable",
+        "math": "disable",
+        "os": "disable",
+        "package": "disable",
+        "string": "disable",
+        "table": "disable",
+        "utf8": "disable"
+    },
+    "Lua.workspace.library": [
+        "~\\.vscode\\extensions\\ketho.wow-api-0.22.2\\Annotations\\Core"
+    ],
+    "Lua.diagnostics.globals": [
+        "Settings",
+        "SlashCmdList",
+        "hash_SlashCmdList",
+        "DEFAULT_CHAT_FRAME",
+        "ACCEPT",
+        "CANCEL",
+        "SELECTED_CHAT_FRAME",
+        "ColorPickerFrame",
+        "NOT_BOUND",
+        "SetDesaturation",
+        "ChatEdit_InsertLink",
+        "OKAY",
+        "ChatFrameUtil",
+        "CLOSE",
+        "FONT_COLOR_CODE_CLOSE",
+        "STANDARD_TEXT_FONT",
+        "HIGH",
+        "LOW"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field",
+        "inject-field"
+    ],
+    "Lua.type.weakUnionCheck": true
+}

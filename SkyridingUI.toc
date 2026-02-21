@@ -1,0 +1,28 @@
+## Interface: 120001
+## Title: SkyridingUI
+## Notes: Recreates the removed skyriding UI and adds additional functionality
+## Author: TheQuibbler
+## Version: 1.0
+## SavedVariables: SkyridingUI_DB
+
+Libraries\LibStub\LibStub.lua
+Libraries\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libraries\AceAddon-3.0\AceAddon-3.0.lua
+Libraries\AceDB-3.0\AceDB-3.0.lua
+Libraries\AceConfig-3.0\AceConfig-3.0.lua
+Libraries\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.lua
+Libraries\AceConsole-3.0\AceConsole-3.0.lua
+Libraries\AceGUI-3.0\AceGUI-3.0.lua
+
+Core.lua
+Options.lua
+OptionsBlizzard.lua
+Modules\OnUpdateHandler.lua
+Modules\PulseAnimation.lua
+Modules\Vigor.lua
+Modules\SecondWind.lua
+Modules\ThrillOfTheSkies.lua
+Modules\GroundSkimming.lua
+Modules\SpeedBar.lua
+Modules\WhirlingSurge.lua
+Modules\SkywardAscent.lua
