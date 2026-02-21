@@ -100,8 +100,8 @@ function SpeedBarModule:Refresh()
     -- Apply size settings
     self.speedBarFrame:SetSize(profile.modules.optional.widthSpeedBar, profile.modules.optional.heightSpeedBar)
     self.border:SetSize(profile.modules.optional.widthSpeedBar, profile.modules.optional.heightSpeedBar)
-    self.thrillOfTheSkiesMarker:SetPoint("TOPLEFT", self.statusBar, "TOPLEFT", 0.6 * profile.modules.optional.widthSpeedBar , 0)
-    self.thrillOfTheSkiesMarker:SetPoint("BOTTOMLEFT", self.statusBar, "BOTTOMLEFT", 0.6 * profile.modules.optional.widthSpeedBar, 0)
+    self.thrillOfTheSkiesMarker:SetPoint("TOPLEFT", self.statusBar, "TOPLEFT", 0.58 * profile.modules.optional.widthSpeedBar , 0)
+    self.thrillOfTheSkiesMarker:SetPoint("BOTTOMLEFT", self.statusBar, "BOTTOMLEFT", 0.58 * profile.modules.optional.widthSpeedBar, 0)
 
     -- Apply scale
     self.baseScale = profile.scale or 1

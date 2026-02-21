@@ -17,6 +17,7 @@ function SkyridingUI:OnInitialize()
             posX = 0,
             posY = 0,
             scale = 1,
+            draggable = false,
             updatesPerSecond = 30,
             hideWhenGrounded = false,
             debug = false,

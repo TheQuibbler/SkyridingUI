@@ -25,8 +25,8 @@ local OptionsTable = {
                     type = "toggle",
                     name = "Only Vigor UI",
                     desc = "Disable all addon modules except the Vigor UI (keeps vigor and vigor decor visible if enabled).",
-                    order = 0,
-                    width = "full",
+                    order = 1,
+                    width = 0.9,
                     get = function()
                         return SkyridingUI.db.profile.onlyVigorUI
                     end,
@@ -35,19 +35,66 @@ local OptionsTable = {
                         SkyridingUI:UpdateModules()
                     end,
                 },
+                -- Preview All toggle
+                previewAll = {
+                    type = "toggle",
+                    name = "Preview All Modules",
+                    desc = "Toggle preview mode for every module at once.",
+                    order = 2,
+                    width = 1,
+                    get = function()
+                        local opt = SkyridingUI.db.profile.modules.optional
+                        return opt.previewSpeedBar
+                            and opt.previewWhirlingSurge
+                            and opt.previewSkywardAscent
+                            and opt.previewThrillOfTheSkies
+                            and opt.previewGroundSkimming
+                            and opt.preview
+                    end,
+                    set = function(_, value)
+                        local opt = SkyridingUI.db.profile.modules.optional
+                        opt.previewSpeedBar = value
+                        opt.previewWhirlingSurge = value
+                        opt.previewSkywardAscent = value
+                        opt.previewThrillOfTheSkies = value
+                        opt.previewGroundSkimming = value
+                        opt.preview = value
+                        SkyridingUI:UpdateModules()
+                    end,
+                },
                 space1 = {
                     type = "description",
                     name = "",
-                    order = 0.5,
+                    order = 2.5,
+                    width = 0.2,
+                },
+                -- Draggable toggle
+                draggable = {
+                    type = "toggle",
+                    name = "Drag to Move",
+                    desc = "Enable dragging the UI instead of only using the position sliders.",
+                    order = 3,
+                    width = 1,
+                    get = function()
+                        return SkyridingUI.db.profile.draggable
+                    end,
+                    set = function(_, value)
+                        SkyridingUI.db.profile.draggable = value
+                        SkyridingUI:UpdateModules()
+                    end,
+                },
+                space2 = {
+                    type = "description",
+                    name = "",
+                    order = 3.5,
                     width = "full",
                 },
-
                 -- Scale slider for UI
                 scale = {
                     type = "range",
                     name = "Scale",
                     desc = "Adjust the overall scale of the UI",
-                    order = 1,
+                    order = 4,
                     width = 1, 
                     min = 0.5,
                     max = 2,
@@ -62,13 +109,12 @@ local OptionsTable = {
                         SkyridingUI:UpdateModules()
                     end,
                 },
-
                 -- X position slider for UI
                 posX = {
                     type = "range",
                     name = "Position X",
                     desc = "Adjust the horizontal position of the UI",
-                    order = 2,
+                    order = 5,
                     width = 1,
                     min = -1000,
                     max = 1000,
@@ -83,13 +129,12 @@ local OptionsTable = {
                         SkyridingUI:UpdateModules()
                     end,
                 },
-
                 -- Y position slider for UI
                 posY = {
                     type = "range",
                     name = "Position Y",
                     desc = "Adjust the vertical position of the UI",
-                    order = 3,
+                    order = 6,
                     width = 1,
                     min = -1000,
                     max = 1000,
@@ -104,17 +149,17 @@ local OptionsTable = {
                         SkyridingUI:UpdateModules()
                     end,
                 },
-                space2 = {
+                space3 = {
                     type = "description",
                     name = "",
-                    order = 3.5,
+                    order = 6.5,
                     width = "full",
                 },
                 updateRate = {
                     type = "range",
                     name = "Updates per Second",
                     desc = "Select how many times per second the animations update.",
-                    order = 4,
+                    order = 7,
                     width = 1,
                     min = 1,
                     max = math.max(60, tonumber(GetCVar("targetFPS")) or 60), -- cap at player's refresh rate
@@ -126,17 +171,17 @@ local OptionsTable = {
                         SkyridingUI.db.profile.updatesPerSecond = value
                     end,
                 },
-                space3 = {
+                space4 = {
                     type = "description",
                     name = "",
-                    order = 4.5,
+                    order = 7.5,
                     width = 0.2,
                 },
                 hideWhenGrounded = {
                     type = "toggle",
                     name = "Hide When Not Gliding",
                     desc = "Automatically hide all UI elements when not gliding (e.g. on the ground or in combat).",
-                    order = 5,
+                    order = 8,
                     width = 1,
                     get = function()
                         return SkyridingUI.db.profile.hideWhenGrounded

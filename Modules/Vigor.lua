@@ -1,6 +1,7 @@
 -- Get the main addon object from AceAddon-3.0
 local addonName, _ = ...
 local SkyridingUI = LibStub("AceAddon-3.0"):GetAddon(addonName)
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0", true)
 
 local VigorModule = SkyridingUI:NewModule("VigorModule")
 local OnUpdateHandler = SkyridingUI:GetModule("OnUpdateHandlerModule")
@@ -15,6 +16,7 @@ function VigorModule:OnInitialize()
     -- Create the main frame for the vigor display
     self.vigorFrame = CreateFrame("Frame", "SkyridingUIVigorFrame", UIParent)
     self.vigorFrame:SetFrameStrata("MEDIUM")
+
 
     self.eventFrame = CreateFrame("Frame")
     self.eventFrame:SetScript("OnEvent", function()
@@ -162,10 +164,50 @@ function VigorModule:Refresh()
     self.vigorFrame:SetScale(self.baseScale)
     self.vigorFrame:ClearAllPoints()
     self.vigorFrame:SetPoint("CENTER", UIParent, "CENTER", db.posX, db.posY)
+    self:UpdateDragState()
     
     -- Show or hide rightDecor based on settings
     if self.rightDecor then self.rightDecor:SetShown(db.modules.vigor.showVigorDecor) end
     if self.leftDecor then self.leftDecor:SetShown(db.modules.vigor.showVigorDecor) end
+end
+
+--------------------------------------------------
+-- Update Drag State
+--------------------------------------------------
+function VigorModule:UpdateDragState()
+    -- Enable or disable dragging based on settings
+    local canDrag = SkyridingUI.db.profile.draggable
+    self.vigorFrame:SetMovable(canDrag)
+    self.vigorFrame:EnableMouse(canDrag)
+    
+    -- Allow optional drag-to-move
+    self.vigorFrame:SetClampedToScreen(true)
+
+    -- Set up drag scripts if draggable, otherwise disable them
+    if canDrag then
+        self.vigorFrame:RegisterForDrag("LeftButton")
+        self.vigorFrame:SetScript("OnDragStart", function(frame)
+            frame:StartMoving()
+        end)
+        self.vigorFrame:SetScript("OnDragStop", function(frame)
+            frame:StopMovingOrSizing()
+            frame:SetScript("OnUpdate", nil)
+
+            local _, _, _, xOfs, yOfs = frame:GetPoint()
+
+            SkyridingUI.db.profile.posX = xOfs
+            SkyridingUI.db.profile.posY = yOfs
+
+            frame:ClearAllPoints()
+            frame:SetPoint("CENTER", UIParent, "CENTER", xOfs, yOfs)
+
+            if AceConfigRegistry then
+                AceConfigRegistry:NotifyChange("Skyriding UI Full")
+            end
+        end)
+    else
+        self.vigorFrame:RegisterForDrag()
+    end
 end
 
 --------------------------------------------------
