@@ -12,7 +12,7 @@ local SKYWARD_DURATION = 2.5
 -- Initialization
 --------------------------------------------------
 function SkywardAscentModule:OnInitialize()
-    self.skywardAscentFrame = CreateFrame("Frame", "SkyridingUIskywardAscentFrame", UIParent)
+    self.skywardAscentFrame = CreateFrame("Frame", "SkyridingUISkywardAscentFrame", UIParent)
     self.skywardAscentFrame:SetFrameStrata("MEDIUM")
     self.skywardAscentFrame:Hide()
 

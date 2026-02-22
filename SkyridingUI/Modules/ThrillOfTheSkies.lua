@@ -10,7 +10,7 @@ local THRILL_SPELL_ID = 377234 -- Thrill of the Skies
 -- Initialization
 --------------------------------------------------
 function ThrillOfTheSkiesModule:OnInitialize()
-    self.thrillOfTheSkiesFrame = CreateFrame("Frame", "SkyridingUIThrillFrame", UIParent)
+    self.thrillOfTheSkiesFrame = CreateFrame("Frame", "SkyridingUIThrillOfTheSkiesFrame", UIParent)
     self.thrillOfTheSkiesFrame:SetFrameStrata("MEDIUM")
     self.thrillOfTheSkiesFrame:Hide()
 
