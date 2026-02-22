@@ -78,7 +78,10 @@ function SkyridingUI:OnInitialize()
                 },
             }
         }
-    })
+    }, true)
+
+    -- Force everyone onto the shared "Default" profile so settings carry across characters
+    self.db:SetProfile("Default")
 
     -- Register slash command /skyui to open config
     self:RegisterChatCommand("skyui", "OpenConfig")
@@ -91,7 +94,7 @@ function SkyridingUI:OnInitialize()
     self.eventFrame:RegisterUnitEvent("UNIT_AURA", "player")
 
     -- Set event handler to update module visibility on relevant events
-    self.eventFrame:SetScript("OnEvent", function(_, event, unit)
+    self.eventFrame:SetScript("OnEvent", function()
         C_Timer.After(0.05, function()
             self:UpdateModuleVisibility()
         end)
