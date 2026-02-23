@@ -25,9 +25,9 @@ Options\GlobalUISettings.lua
 Options\VigorSettings.lua
 Options\SecondWindSettings.lua
 Options\ProgressBars\SharedSettings.lua
-Options\ProgressBars\SpeedBar.lua
-Options\ProgressBars\SkywardAscent.lua
-Options\ProgressBars\WhirlingSurge.lua
+Options\ProgressBars\SpeedBarSettings.lua
+Options\ProgressBars\SkywardAscentSettings.lua
+Options\ProgressBars\WhirlingSurgeSettings.lua
 Options\Buffs\SharedSettings.lua
 Options\Buffs\ThrillOfTheSkiesSettings.lua
 Options\Buffs\GroundSkimmingSettings.lua

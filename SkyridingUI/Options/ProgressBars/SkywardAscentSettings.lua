@@ -118,11 +118,33 @@ function SkyridingUI:SkywardAscentSettings()
                 order = 5.5,
                 width = "full",
             },
+            thrillOfTheSkiesSkywardAscent = {
+                type = "toggle",
+                name = "Thrill of the Skies",
+                desc = "Show only when Thrill of the Skies is active",
+                order = 6,
+                hidden = function()
+                    return not SkyridingUI.db.profile.modules.optional.enableSkywardAscent
+                end,
+                get = function()
+                    return SkyridingUI.db.profile.modules.optional.thrillOfTheSkiesSkywardAscent
+                end,
+                set = function(_, value)
+                    SkyridingUI.db.profile.modules.optional.thrillOfTheSkiesSkywardAscent = value
+                    SkyridingUI:UpdateModules()
+                end,
+            },
+            space3 = {
+                type = "description",
+                name = "",
+                order = 6.5,
+                width = "full",
+            },
             previewSkywardAscent = {
                 type = "toggle",
                 name = "Preview Animation",
                 desc = "Preview the Skyward Ascent progress bar without needing the spell to be used",
-                order = 6,
+                order = 7,
                 hidden = function()
                     return not SkyridingUI.db.profile.modules.optional.enableSkywardAscent
                 end,

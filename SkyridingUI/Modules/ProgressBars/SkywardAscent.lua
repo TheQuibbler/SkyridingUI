@@ -141,8 +141,9 @@ end
 --------------------------------------------------
 function SkywardAscentModule:SetActive(active)
     local show = active and SkyridingUI.db.profile.modules.optional.enableSkywardAscent
+    local hideWhenMissingThrill = SkyridingUI.db.profile.modules.optional.thrillOfTheSkiesSkywardAscent and not SkyridingUI.modules["ThrillOfTheSkiesModule"].thrillOfTheSkiesFrame:IsShown()
 
-    if show then
+    if show and not hideWhenMissingThrill then
         self.eventFrame:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", "player")
         self:UpdateState()
     else
