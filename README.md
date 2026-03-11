@@ -22,6 +22,7 @@ The addon also includes additional modules for visual skyriding cues, such as Se
 ## Usage
 - Once installed, log into World of Warcraft and enable SkyridingUI from the AddOns menu.
 - Open options with `/skyui` or `/SkyridingUI`.
+- You can also open the options, by clicking the SkyridingUI entry in the Addon Compartment at the Minimap.
 - The vigor-style display activates automatically when you begin skyriding.
 - Enable or disable any module to match your preferred setup.
 
