@@ -182,6 +182,26 @@ function SkyridingUI:GlobalUISettings()
                     SkyridingUI:UpdateModules()
                 end,
             },
+            space5 = {
+                type = "description",
+                name = "",
+                order = 8.5,
+                width = 0.2,
+            },
+            minimapButton = {
+                type = "toggle",
+                name = "Show Minimap Button",
+                desc = "Show the SkyridingUI button in the addon compartment.",
+                order = 9,
+                width = 1,
+                get = function()
+                    return SkyridingUI.db.profile.enableMinimap
+                end,
+                set = function(_, value)
+                    SkyridingUI.db.profile.enableMinimap = value
+                    SkyridingUI:UpdateModules()
+                end,
+            },
         },
     }
 end

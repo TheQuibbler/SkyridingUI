@@ -14,10 +14,10 @@ local frameLeft = 0
 local frameRight = 0.25
 local frameTop = 0
 local frameBottom = 0.2
+
 --------------------------------------------------
 -- Initialization
 --------------------------------------------------
-
 function SecondWindModule:OnInitialize()
     -- Create the main frame for the SecondWind display
     self.secondWindFrame = CreateFrame("Frame", "SkyridingUISecondWindFrame", UIParent)

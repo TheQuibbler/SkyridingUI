@@ -10,6 +10,7 @@ SkyridingUI_namespace.DefaultProfile = {
         draggable = false,
         updatesPerSecond = 30,
         hideWhenGrounded = false,
+        enableMinimap = true,
         debug = false,
         modules = {
             vigor = {

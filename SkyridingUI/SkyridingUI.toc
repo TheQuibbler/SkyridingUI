@@ -19,6 +19,7 @@ DefaultSettings.lua
 
 # Addon Creation
 Core.lua
+MinimapButton.lua
 
 # Modular Option Definitions
 Options\GlobalUISettings.lua
