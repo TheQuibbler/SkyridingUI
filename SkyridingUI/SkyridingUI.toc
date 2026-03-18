@@ -2,7 +2,7 @@
 ## Title: SkyridingUI
 ## Notes: Recreates the removed skyriding UI and adds additional functionality
 ## Author: TheQuibbler
-## Version: 1.0.3
+## Version: 1.0.4
 ## SavedVariables: SkyridingUI_DB
 
 Libraries\LibStub\LibStub.lua
@@ -19,7 +19,7 @@ DefaultSettings.lua
 
 # Addon Creation
 Core.lua
-MinimapButton.lua
+AddonCompartment.lua
 
 # Modular Option Definitions
 Options\GlobalUISettings.lua
