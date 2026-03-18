@@ -2,14 +2,14 @@
 local addonName, _ = ...
 local SkyridingUI = LibStub("AceAddon-3.0"):GetAddon(addonName)
 
-local MinimapModule = SkyridingUI:NewModule("MinimapModule")
+local AddonCompartmentModule = SkyridingUI:NewModule("AddonCompartmentModule")
 local aceDialog = LibStub("AceConfigDialog-3.0")
 
 
 --------------------------------------------------
 -- Initialization
 --------------------------------------------------
-function MinimapModule:OnInitialize()
+function AddonCompartmentModule:OnInitialize()
     -- Prepare compartment entry data
     self.compartmentData = {
         text = "SkyridingUI",
@@ -38,8 +38,8 @@ end
 --------------------------------------------------
 -- Refresh (show/hide based on options)
 --------------------------------------------------
-function MinimapModule:Refresh()
-    local show = SkyridingUI.db.profile.enableMinimap
+function AddonCompartmentModule:Refresh()
+    local show = SkyridingUI.db.profile.enableAddonCompartmentButton
 
     if show then
         -- Register if not already registered
