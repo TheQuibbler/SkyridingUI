@@ -16,8 +16,8 @@ The addon also includes additional modules for visual skyriding cues, such as Se
 - Fully modular: enable only the pieces you want.
 
 ## Installation
-1. Download the SkyridingUI addon.
-2. Extract the contents into your World of Warcraft `Interface/AddOns` directory.
+1.  Copy the `SkyridingUI` folder into your World of Warcraft `Interface/AddOns/` directory.
+2.  Reload the UI (`/reload`) or restart the client. 
 
 ## Usage
 - Once installed, log into World of Warcraft and enable SkyridingUI from the AddOns menu.

@@ -1,18 +1,20 @@
-## Interface: 120001
+## Interface: 120005
 ## Title: SkyridingUI
 ## Notes: Recreates the removed skyriding UI and adds additional functionality
 ## Author: TheQuibbler
-## Version: 1.0.4
+## Version: 1.0.5
 ## SavedVariables: SkyridingUI_DB
 
 Libraries\LibStub\LibStub.lua
 Libraries\CallbackHandler-1.0\CallbackHandler-1.0.lua
 Libraries\AceAddon-3.0\AceAddon-3.0.lua
 Libraries\AceDB-3.0\AceDB-3.0.lua
-Libraries\AceConfig-3.0\AceConfig-3.0.lua
+Libraries\AceGUI-3.0\AceGUI-3.0.xml
+Libraries\AceConfig-3.0\AceConfigRegistry-3.0\AceConfigRegistry-3.0.lua
+Libraries\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.lua
 Libraries\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.lua
+Libraries\AceConfig-3.0\AceConfig-3.0.lua
 Libraries\AceConsole-3.0\AceConsole-3.0.lua
-Libraries\AceGUI-3.0\AceGUI-3.0.lua
 
 # Default Setting object, needs to be initialized before Core
 DefaultSettings.lua
