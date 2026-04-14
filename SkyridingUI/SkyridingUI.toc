@@ -1,4 +1,4 @@
-## Interface: 120005
+## Interface: 120001, 120005
 ## Title: SkyridingUI
 ## Notes: Recreates the removed skyriding UI and adds additional functionality
 ## Author: TheQuibbler
